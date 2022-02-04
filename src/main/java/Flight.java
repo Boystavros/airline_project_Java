@@ -60,10 +60,17 @@ public class Flight {
     }
 
     public void addCrewMember(CabinCrewMember cabinCrewMember) {
-        this.crew.add(cabinCrewMember);
+        crew.add(cabinCrewMember);
     }
 
-    public void bookFLight(Passenger passenger) {
-        this.passengers.add(passenger);
+    public void bookFlight(Passenger passenger) {
+        if(passengers.size() < plane.getCapacity()) {
+            passengers.add(passenger);
+        }
+    }
+
+
+    public int getAvailableSeats() {
+        return plane.getCapacity() - passengers.size();
     }
 }
