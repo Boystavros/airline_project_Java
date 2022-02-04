@@ -14,4 +14,7 @@ public class Pilot extends Staff{
     }
 
 
+    public String fly() {
+        return "Whoosh";
+    }
 }
